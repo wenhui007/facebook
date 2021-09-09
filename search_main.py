@@ -1,6 +1,6 @@
 """
 author:袁帅
-date:2021/6/30 13:14
+date:2021/4/30 13:14
 账号id、账号昵称、转发、评论、点赞；发布时间、发布内容、内容链接、账号主页链接
 """
 # -*- coding=utf-8 -*-
@@ -18,16 +18,15 @@ import random
 import pymongo
 from bs4 import BeautifulSoup
 import locale
-# 中文支持
-locale.setlocale(locale.LC_CTYPE, 'chinese')
+
 
 
 # 连接数据库
 # from 转变时间戳 import time_turn
 
-database = pymongo.MongoClient('192.168.1.103', port=27017)
-db = database['facebook']
-kzxy_list = db['kzxy']
+database = pymongo.MongoClient('', port=)
+db = database['']
+kzxy_list = db['']
 
 sys.path.append(os.path.dirname(__file__))
 
@@ -94,11 +93,9 @@ class FB:
         # 统计一个用户发帖数量
         num = 0
         sleep(random.randint(6, 8))
-             # 一共下滑一百次次，下滑一次停顿0.5s
-        # 由于是异步加载，所以需要拉到最下方
         zhnc = ''
         for i in range(1,2000):
-            # 从第一页开始，没别的意思，强迫症
+            
             print(f'*****************************第{i}页***************************')
             # self.driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')
             # self.driver.execute_script('window.scrollBy(0,250);')
@@ -711,10 +708,6 @@ if __name__ == '__main__':
     # 师资处--欧洲教师自愿者脸书数据8月
     # keyword_list=['daniela.marieiragii.9', 'donna.rice.3511', 'echo.guo.334', 'graceweihair', 'hahahoho2299', 'jessica.chu.982292', 'linlin.jubujubu', 'mjeanas', 'ping.cui.5876', 'ppanan.liu', 'Rebecca.Niu.505', 'suku.bee', 'sunny.qiao.50', 'yang.mi.7758', 'yanli.ren.9', 'profile.php?id=100014285328747', 'celine.jiang.10', 'judyyye.lyu.3', 'jane.chinese.1', 'jing.pan.79', 'jinxiu.wang.754', 'liping.liu.370', 'min.fan.9', 'profile.php?id=100022188851437', 'profile.php?id=100029100170030', 'xiangyi.tanglan', 'li.guodong.50', 'geng.lu.92', 'han.qi.102', 'stefano.shi.509', 'ZhuGuizhi', 'yuge.fu', 'hongmei.wu.54', 'weizheng.soon.16', 'profile.php?id=100035897914640', 'lanyu.huang.12', 'laura.zhang.982', 'peng.fu.372019', 'feifei.guo.399', 'guoli.mei.79', 'eva.zhao.944', 'qian.yin.7921', 'xiaozheng.wang.860416', 'ziqiao.zang', 'profile.php?id=100038229193352', 'anna.xu.940', 'baoyinhui', 'profile.php?id=100013521249592', 'cari.wu.1', 'chang.yan.180', 'profile.php?id=100050102823462', 'chaobing.sun', 'profile.php?id=100024799081166', 'cristina.kachelovevlns', 'profile.php?id=100000264646084', 'duo.wang.737', 'zoe.lou.9231', 'guanyu.you.965', 'hanchun.wan', 'hong.liu.906', 'ivvvyhuang', 'jane.luo.902', 'augusto.zhao', 'jingzhou.wang', 'joanne.deng.77', 'profile.php?id=100010210837474', 'happychhuan', 'jujumeis', 'profile.php?id=100050342435850', 'limei.wang.75873708', 'profile.php?id=100010573636177', 'luna.jin.165', 'maggie.man.359', 'maoyu.sun', 'profile.php?id=100009900046331', 'profile.php?id=100052760522845', 'mike.top.3766', 'profile.php?id=100009729554110', 'profile.php?id=100001713489629', 'zetaminus', 'qizhou.chen.737', 'profile.php?id=100009541824519', 'sandy.huang.33886', 'shi.jiani.77', 'shirley.shi.16', 'shuhua.yin.71', 'shuo.wang.10236', 'song.shuang.927', 'suzy.wang.5872', 'profile.php?id=100004822383793', 'profile.php?id=100001637300025', 'wang.chao.353803', 'weichang.yu.104', 'xinge.zou.7', 'k1395410', 'aberdeen.ci', 'profile.php?id=100045217980706', 'xuyang.jiang', 'yangping.yangping.94', 'profile.php?id=100002055568754', 'yanyan.li.100483', 'profile.php?id=100020292582747', 'yingz.zhao.16', 'yiyun.li.14', 'profile.php?id=100009712898252', 'peng.yuping', 'yunfei.liang.16', 'profile.php?id=100004328221733', 'profile.php?id=100048763005166', 'zheng.wang.50115', 'zhiqing.guo.9678', 'zixun', 'profile.php?id=100051043575325']
     # keyword_list=['daniela.marieiragii.9','suku.bee','yang.mi.7758','linlin.jubujubu','mjeanas','profile.php?id=100029100170030','echo.guo.334','jessica.chu.982292','graceweihair','liping.liu.370','min.fan.9','ppanan.liu','profile.php?id=100014285328747','celine.jiang.10']
-    # 亚非处--中方院长个人自媒体脸书数据8月
-    # keyword_list=['tsogzolmaa.erdenebayar', 'rangsri.yang', 'miyya.zhang.5', 'yongkang.wang.184']
-    # 师资处--亚非（公派途径）脸书数据8月
-    #keyword_list=['profile.php?id=100004607378501', 'profile.php?id=100007066143774', 'profile.php?id=100038107328752']
     # 师资处--亚非（发声途径）脸书数据8月
     # keyword_list=['yang.jin.50309', 'rob.mar.71653', 'xu.ma.315', 'jiannisjiang', 'confuciusbuu', 'vanessa.chen.58760', 'tao.feng.948494', 'feifei.dai.1', 'shenghua.zhang.16', 'qingyi.chen.7', 'gongcuiyun.megan']
     # 师资处--美大教师自媒体脸书数据8月
